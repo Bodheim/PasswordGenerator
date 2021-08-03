@@ -1,17 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 function generatePassword() {
   //define veriables or lists of like items that we are choosing from
   //in this case for passwords lowercase letters, uppercase letter,
@@ -90,13 +79,17 @@ function generatePassword() {
   password = pass.join("");
   return password;
 }
-console.log(random);
-console.log(pass); //shows each character of the password.
-console.log(password);
-//now I need to take those characters and call them to a format
-//that can be copypastaed
-console.log("Your password is " + password);
-alert(password);
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 //I was able to get to this point but I just don't understand how to make
 //this into a working fuction where you select the Generate button
